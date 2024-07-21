@@ -19,8 +19,8 @@ void init(struct elevator* e){
 void run(struct elevator* e){
     for(;;){
         detail_info(e);
-        open_door_judgement(e);
         change_target(e);
+        open_door_judgement(e);
         e->currentf+=e->direction;
         sleep(1);
     }
@@ -128,6 +128,8 @@ void detail_info(struct elevator* e){
         else if(e->direction==1){
             printf("⬆\n");
         }
+        else 
+            printf("==");
     }
     
 }
